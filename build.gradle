@@ -19,19 +19,24 @@ jar {
 
 dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-web:2.5.5'
-    implementation 'org.projectlombok:lombok:1.18.20'
-
-    testImplementation 'org.springframework.boot:spring-boot-starter-test:2.5.5'
-	testCompileOnly 'org.projectlombok:lombok:1.18.20'
-	testAnnotationProcessor 'org.projectlombok:lombok:1.18.20'
-	annotationProcessor 'org.projectlombok:lombok:1.18.20'
-	runtimeOnly 'mysql:mysql-connector-java:8.0.25'
-	runtimeOnly group: 'org.postgresql', name: 'postgresql', version: '42.2.24'
-
-	implementation 'org.springframework.boot:spring-boot-starter-data-jdbc:2.5.5'
-	implementation 'org.springframework.boot:spring-boot-starter:2.5.5'
 	implementation 'org.springframework.boot:spring-boot-starter-data-jpa:2.5.5'
-//	providedRuntime 'org.springframework.boot:spring-boot-starter-tomcat:2.5.5'
+	implementation 'org.springframework.boot:spring-boot-starter-validation:2.5.5'
+	implementation 'org.springframework.boot:spring-boot-starter-mail:2.5.5'
+	implementation 'org.springframework.boot:spring-boot-starter-actuator:2.5.5'
+	//runtimeOnly 'mysql:mysql-connector-java'
+	runtimeOnly 'org.postgresql:postgresql:42.2.24.jre7'
+	testImplementation ('org.springframework.boot:spring-boot-starter-test:2.5.5') {
+		exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
+	}
+	testImplementation 'com.google.code.gson:gson:2.8.8'
+	compileOnly 'org.projectlombok:lombok:1.18.22'
+	annotationProcessor 'org.projectlombok:lombok:1.18.22'
+
+	testCompileOnly 'org.projectlombok:lombok:1.18.22'
+	testAnnotationProcessor 'org.projectlombok:lombok:1.18.22'
+
+
+	//providedRuntime 'org.springframework.boot:spring-boot-starter-tomcat'
 }
 
 test {
